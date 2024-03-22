@@ -1,0 +1,45 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0B1215;
+}
+
+.dots {
+  width: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dots .dot {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: bounce 0.5s var(--sleep) linear infinite;
+}
+
+.dots .dot:first-child {
+  --sleep: 0ms;
+}
+.dots .dot:nth-child(2) {
+  --sleep: 100ms;
+}
+.dots .dot:last-child {
+  --sleep: 200ms;
+}
+
+
+@keyframes bounce {
+  0%, 66% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  33% {
+    opacity: 0.6;
+    transform: translateY(-9px);
+  }
+}
